@@ -74,7 +74,7 @@ koalaRouter.delete('/:id', (req, res) => {
     pool.query(sqlQuery, [koalaId])
         .then((response) => {
             console.log(`we deleted the koala with id ${koalaId}`);
-            res.send(200);
+            res.sendStatus(200);
         }).catch((err) => {
             console.log('something went wrong in koalaRouter.delete', err);
             res.sendStatus(500)
